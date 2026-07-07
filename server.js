@@ -16,7 +16,8 @@ app.use("/api/property",propertyRoutes)
 app.use("/api/contact",contactRoutes)
 app.use('/uploads', express.static('uploads'));
 // call back function
-app.listen(3000,()=>{
+const PORT = process.env.PORT || 3000;  
+app.listen(PORT,()=>{
 console.log("Server running in port 3000")
 })
 
