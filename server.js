@@ -15,6 +15,9 @@ app.use("/api/auth",authRoutes)
 app.use("/api/property",propertyRoutes)
 app.use("/api/contact",contactRoutes)
 app.use('/uploads', express.static('uploads'));
+app.get("/api/check", (req, res) => {
+  res.json({ message: "API working" });
+});
 // call back function
 const PORT = process.env.PORT || 3000;  
 app.listen(PORT,()=>{
