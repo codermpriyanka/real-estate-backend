@@ -36,6 +36,8 @@ exports.signup =async(req,res)=>{
 }
 //login API
 exports.login=async(req,res)=>{
+     console.log("========== LOGIN API HIT ==========");
+    console.log("Request Body:", req.body);
     try{
  const{email,password}=req.body
  const user= await User.findOne({email})
@@ -84,6 +86,7 @@ exports.login=async(req,res)=>{
  })
     }
     catch(err){
+        console.log(err ,"error login api")
         res.status(500).json({
             status:500,
             message:"Internal Server Error"
